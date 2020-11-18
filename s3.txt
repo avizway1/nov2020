@@ -122,6 +122,10 @@ __________________________________
 Multipart upload: FIle becomes as small chunks (parts) then all small parts upload to s3 then it combines.
 
 
+Join me on Slack – it’s a faster, simpler way to work. Sign up here, from any device: 
+https://join.slack.com/t/awswithavinash/shared_invite/zt-j6e1dsee-zYIONJVgfq3EqtQpYvDhRA
+
+
 
 
 
