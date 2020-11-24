@@ -126,6 +126,109 @@ Join me on Slack – it’s a faster, simpler way to work. Sign up here, from an
 https://join.slack.com/t/awswithavinash/shared_invite/zt-j6e1dsee-zYIONJVgfq3EqtQpYvDhRA
 
 
+________________________________________________________________________________________
+
+D: 23/11/2020
+
+Replication : DR
+	--> CRR (Cross Region Replication) : Replica copy stores in Another region
+	--> SRR (Same Region Replication) : Replica copy stores in another bucket in same 		region
+--> Versioning must be enabled.
+
+--> Before enabling Replication, Whetever data we have in SOurce, won;t replicate to destination.   (aws s3 sync Sourcebucket destination)
+
+
+
+Static website hosting: 
+--> S3 supports only static website hosting.
+--> Domain Name Should be same as Bucket Name.
+--> Index.html / Error.html
+
+http Status Codes : 
+2XX : OK / Success
+3XX : Redirection error
+4XX : Client Side Error	
+5XX : Server Side Error
+
+
+WinSCP / S3 Browser / Cyberduck / CLoudberry explorer..!!!
+aws s3 cp s3://bucketnme c:/newfolder --recursive
+
+_______________________________________________________________________________________
+
+D: 24/11/2020
+
+Tag: Combination of Key and Value. 
+Key  		: Value
+Name 		: Avinash
+Application 	: 
+Cost Center	: AAZAA
+
+Server access logging : ONly one bucket logging enabled. 
+
+CloudTrail : Logging service in AWS. 
+--> It will log everything we perform in AWS env. 
+--> Data Events, Can log all S3 platform logs. 
+
+
+Events : 
+--> SNS Notification : Demo
+--> SQS
+--> Lambda
+
+
+SNS : Simple Notification Service : 
+Create a Topic --> Add Subscribers 
+
+ARN : Amazon Resource Name : 
+
+
+Transfer acceleration : NO FREE TIER ELIGIBULITY
+https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html
+
+
+Requester pays : When enabled, the requester pays for requests and data transfer costs, and anonymous access to this bucket is disabled.
+
+Cloudwatch : Monitoring Service in AWS. We will get the Metrics (Graphical format). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
