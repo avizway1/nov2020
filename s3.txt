@@ -21,6 +21,7 @@ S3:
 	--> Should not resemble IP address format.
 	--> Should not begin with xn--
 
+
 --> S3 is a Global resource. (From Single console we can see all region resources).
 --> WHile creating we need to choose the region, Actual data stores there.
 
@@ -118,6 +119,7 @@ Version: SHOW
 LCR : Life Cycle Management RUle :
 __________________________________
 
+Using LCR : We can transit object from one storage class to another storage class.
 
 Multipart upload: FIle becomes as small chunks (parts) then all small parts upload to s3 then it combines.
 
@@ -190,6 +192,51 @@ https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-
 Requester pays : When enabled, the requester pays for requests and data transfer costs, and anonymous access to this bucket is disabled.
 
 Cloudwatch : Monitoring Service in AWS. We will get the Metrics (Graphical format). 
+
+________________________________________________________________________________________
+
+D: 25/11/2020
+
+KMS : Key Management Service : 
+
+
+In-Transit Encryption :  
+	--> SSL/TLS
+
+Service Side Encryption / At-Rest : After uploading data to s3.. 
+
+--> SSE - S3 : S3 platform can encrypt and decrypt the data. However have valid access on s3, they can decrypt/view the data.
+
+--> SSE - KMS : In KMS we need to generate the Key, and Whoever have the Key usage permissions, only they can view the data.   Key Material is Generated and managed by KMS.
+
+--> SSE- kms C (Customer Provided) : IN KMS we need to upload the key material, and Whoever have the Key usage permissions, only they can voew the data.   Key Material is Provided by customer and managed by KMS. 
+
+Client Side Encryption : 
+--> If customer is not ready to send unencrypted data to s3. 
+--> Customer is responsible for encry / decryp data. 
+--> If customer is not ready to share/upload his key material to aws. 
+
+User 1 : S3FullAccess : Key Usage permissions on KMS: 
+User 2 : S3FullAccess : 
+
+KMS Key Creation : 
+--> Choose the mechanism : Symmetric / Asymetric
+--> GIve alias name to the key
+--> Who Can Administrate the Key.?
+--> Who can use the Key..?
+
+_____________
+
+Object Lock : 
+
+Governance : Users with specific IAM permissions can overwrite or delete protected object versions during the retention period.
+
+Compliance : No users can overwrite or delete protected object versions during the retention period.
+
+
+
+
+
 
 
 
