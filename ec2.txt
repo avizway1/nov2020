@@ -1,0 +1,52 @@
+ec2 : Elastic Compute Cloud : 
+
+Instance = Server / Box = VM (Virtual machine) = Azure VM = GCP Engine.. 
+
+
+
+On-Demand ec2 Instances : Unpredictable workloads/usecases : Test your applicaiton with multiple configs.... 
+Pricing : /hr .. /sec (Min of 60 Seconds..)
+
+
+Reserved Instance (RI) : Predictable workloads.. Longterm runs in aws.. We need to choose the config.. 
+Duration : 1 Yr / 3 Yrs.. 
+
+	--> Standard RI : We cannot change the config.. 
+	--> Convertable RI : We can change the config (upgrade).. 
+	--> Scheduled RI : for repeated req/ persistant req.. (ex: Mon-Fri)
+
+Pricing : 
+	--> FullUpfront : Pay 100% while purchasing.. 
+	--> Partial Upfront : Pay 30-50% now.. AWs reduces the Hourly price.. Pay for the 		reduced hourly price for actual usage in the month.. 
+	--> No Upfront : Pay everything monthly basis. 
+
+--> In AWS Marketplace, we can sell our reserved instances.
+
+Spot Instances : We need to bid our price against aws pricing.. If quoted price is equal / more than aws priceing, we will get the instance.
+--> If our application have flexible start/stop duration. 
+--> If our app doesn't required 24x7 up and running.. 
+--> If you nwant to test High configs with low cost.. 
+
+RUn : 1 Hr , 30 Minutes.. 
+Pricing : If Price increased, AWS terminated our instance.. 1 Hr.. 
+	Price not increased, WE terminated our instance.. 1 Hr 30 Min..
+
+
+Fix to multiple regions..  
+--> Mumbai
+--> N Virginia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -234,6 +234,76 @@ Governance : Users with specific IAM permissions can overwrite or delete protect
 Compliance : No users can overwrite or delete protected object versions during the retention period.
 
 
+_______________________________________________________________________________________
+
+D: 26/11/2020
+
+Access control list (ACL) : 
+
+Public ACcess : EVeryone.. 
+	Cananical ID : Share S3 buckets. 
+d9c9ac65f60284660296b91944f281d085f73004f464313aade22583db54
+
+
+
+1avinash
+
+IAM User1 : S3FullAccess :  
+IAM User2 : S3FullAccess : Deny Upload on "1avinash" bucket.. 
+
+Bucket policy : Writtens in JSON format.
+--> AWS have it's policy generator.
+
+https://awspolicygen.s3.amazonaws.com/policygen.html
+
+
+Effect : Allow / Deny	: DENY
+Principle : IAMuser/IAM Group : arn:aws:iam::518084852393:user/user2
+Actions : PutObject
+ARN (amazon Resource Name) : bucket : arn:aws:s3:::1avinash/*
+
+Object level operation : /*
+Bucket level operation : No need to add /*
+
+
+
+Task : Explore S3 Policy Generator for S3.
+
+Task 2 : Allow only one bucket to an IAM user. 
+user 1 --> bucket1 ==> 
+
+
+Storage classes :
+Versioning :
+Lifecycle rule :
+CRR/SRR :
+Bucket policy : 
+Encryption : 
+
+
+Cross-origin resource sharing (CORS) : he CORS configuration, written in JSON, defines a way for client web applications that are loaded in one domain to interact with resources in a different domain.
+https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
+
+
+AWS Import / Export : 
+--> AWS Owned Devices ..   AWS Snowball Edge / AWS Snowmobile / SNowcone
+
+AWS Snowcone	8 TB
+Snowball Edge 	42 TB / 100 TB
+AWS Snowmobile : Hexabyte Scale container.. 
+
+
+
+Hybdrid cloud : Expand onpRemise environment. ENables communication between OnPRem and AWS resources. 
+--> AWS Direct Connect : 
+--> AWS Outpost : 
+
+
+
+
+
+
+
 
 
 
