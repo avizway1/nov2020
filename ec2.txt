@@ -2,8 +2,6 @@ ec2 : Elastic Compute Cloud :
 
 Instance = Server / Box = VM (Virtual machine) = Azure VM = GCP Engine.. 
 
-
-
 On-Demand ec2 Instances : Unpredictable workloads/usecases : Test your applicaiton with multiple configs.... 
 Pricing : /hr .. /sec (Min of 60 Seconds..)
 
@@ -35,6 +33,88 @@ Pricing : If Price increased, AWS terminated our instance.. 1 Hr..
 Fix to multiple regions..  
 --> Mumbai
 --> N Virginia
+
+____________________________________________________________________________________
+
+D: 01/12/2020
+
+ec2: It supports only Server calss OS. 
+
+Launch a Windows ec2 instance. 
+
+Step 1 : Choose an AMI (Amazon Machine Image) 	: OS (Deafult/GAMI / Marketplace/community) : Windows Server 2016
+
+Step 2: Choose an Instance Type : 
+
+General Purpose : Stable perormance : suitable for most of the workloads.. : t2, t3, a1, m4
+COmpute optimized : More CPU usage : c4, c5
+GPU Instances : More Graphic usage : p2, g4
+Memory utilisation : More RAM/Memory usage : r3, r4, r5, x1, z1
+Disk utilisation : d, i
+
+c5.xlarge : 4vCPU, 8 RAM.. 
+m5.xlarge : 4vCPU, 16 RAM..
+t3.large : 2vCPU, 8 RAM.. 
+
+
+Free TIER : t2.micro : 1vCPU, 1 RAM.. 
+
+Step 3: Configure Instance Details
+
+Shutdown behavior : Stop
+Enable termination protection : Enabled
+
+Step 4: Add Storage
+
+Windows : 30 gb
+Linux : 8 gb 
+
+Step 5 : Add tags
+
+Name: XXX
+Platform :WIndpows / Linux
+Cost Center : AAZAA
+
+Step 6: Configure Security Group
+
+Firewall at Instance level.
+Port : 0-65536
+WIndows : RDP (Remote Desktop Protocol) : Port 3389 : 
+Linux : SSH (Secure Shell) : Port 22 : 
+
+http  : Port 80 : 
+https : Port 443 : 
+mssql : Port 1433
+Mysql : Port 3306
+
+Anywhere : Anyone can connect from any network.. : 0.0.0.0/0
+Custom : We can give any network IP
+MyIP : It picks currently connected network IP
+
+Step 7 : Review and Create a Keypair.
+
+Keypair: It provides Username, Password information. It works with Public/private key.. ENcryption happens here.
+
+
+Option 1 : Start --> Remore desktop conenction --> open it.
+Option 2 : Win+r --> mstsc 
+Option 3 : choose instance --> connect --> RDP CLient --> Download --> Open 
+
+
+Public IP : Unique across the globe.
+
+Stop/start : We don't loss any data.
+Terminate : Delete Permanantly.
+
+Task 1 : Launch a Windows server 2016 instance, Login with initial password, change the password.  Try to use the system password and verify it works or not..????
+
+Task 2 : Create another User in Server, Provide remote desktop permissions and local admin permissions. Try to connect as that newly created user.
+
+	Output: 2 sessions should be active at a time. 
+
+_______________________________________________________________________________________
+
+
 
 
 
