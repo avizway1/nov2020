@@ -114,14 +114,48 @@ Task 2 : Create another User in Server, Provide remote desktop permissions and l
 
 _______________________________________________________________________________________
 
+D: 02/12/2020
+
+ec2 : 
+
+Tenancy : 
+--> Shared Tenancy : Underlying physical resources shared with multiple customers. 
+--> Dedicated tenancy : Underlying physical resources will not be shared with any other customers. Dedicatedly avaibale to one customer usage.  (NO FREE TIER)
+	--> Dedicated Host : We can apply licenses at CPU cores / HW lavel.
+	--> Dedicated Instance 
+
+SG :
+WIndows : WIndows_ManagementSG : 3389
+Linux : Linux_ManagementSG : 22
+
+ec2config service takes sometime to up and running in windows instances. 
+Windows : iis
+
+http:// --> 80
+https:// --> 443
 
 
+Security Groups:
+--> CHanges to the SG takes effect immediatel.y. 
+--> No need to reboot / start / stop the instance.
+--> One SG we can associate with multiple instances.
+--> One instance can be associated with Multiple SG also. 
+--> We always need to takes care about the Inbound rules only, as SG are stateful. 
+
+public doc root path : c:/inetpub/wwwroot/  --> place all the files.
 
 
+Stop and STart instance will give us a new Public IP address. 
+THis is not recommendced for Production env. 
+
+Elastic IP : EIP : If we allocate EIP to our ec2 instance, it gives a fixed IP address. Stop/start won't change this EIP.  (NO FREE TIER ELIGIBLE)
 
 
+Can we associate multiple IPs to our instance.? Yes..
+ENI : Elastic Network Interface.. : 
 
 
+Task: Launch an ec2 instance and install iis. Deliver for everyone.
 
 
 
