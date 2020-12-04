@@ -157,6 +157,100 @@ ENI : Elastic Network Interface.. :
 
 Task: Launch an ec2 instance and install iis. Deliver for everyone.
 
+______________________________________________________________________________________
+
+D: 03/12/2020
+
+
+VOlume : Storage 
+
+root : OS : gp2/gp3.. io1/io2.. Standard.. 
+IOPS : Input and Output Operations per Second.
+
+
+general Purpose SSD : gp2/gp3 : most commonly used volume.. STable performance.. 
+	Min: 1 GB, Max: 16 TB..   IOPS : 16,000.. 
+	Small and medium sized Databases.. (mssql/oracle).. Dev/Test environment..
+	Ratio : for 1 gb, we will get 3 IOPS only.. with min of 100.. 1 : 3 ratio.. 	
+		
+
+Provisioned IOPS SSD : io1 / io2 : Highest performance SSD.. 
+	Min: 4 GB, Max: 16 TB..   IOPS : 64,000.. 
+	I/O sensitive application.. i.e; NOSQL, Relational databases.. 
+	Ratio : for 1 gb, we will get 50 IOPS, 1:50 ratio... 
+	but we have an option to choose desired IOPS count	 
+
+Standard / Magnetic : Lowest cost and lowest performance volumes.. 
+	Min: 1 GB, Max: 1 TB..   IOPS : n/a
+
+___
+
+Throughput optimized HDD: st1 :  Low cost HDD volume for Freq accessed data..
+	Bigdata, Data waregousing, log processing.. 
+	Min: 125 GB.. Max: 16 TB.. Max IOPS: 500
+Cold HDD : sc1 : Lowest cost HDD volume for Less Freq accessed data.. 
+	COlder data required fewer scans per day.. 
+	Min: 125 GB.. Max: 16 TB.. Max IOPS: 250
+
+_________________________
+
+use: gp2 and Magnetic.. These 2 comes under Free tier eligibility. 
+30 gb only.. 
+
+connect to your ec2 instance.. in run.. diskmgmt.msc..
+Windows: FAT, FAT32, NTFS, ReFS
+Linux: ect3, ext4, xfs, nfs
+
+--> Add a brand new volume and make it available. 
+--> Increase existing volume size. 
+
+--> VOlumes works at AZ level. If your instance is in ap-south-1a, we need to create a volume in same AZ to associate with this instance. 
+
+
+Snapshot: Backup copy of our EBS volumes.. 
+
+From a Snapshot, We can create multiple Copies of volumes in Multiple AZs, but in same Region. 
+
+
+_____________
+
+Task : Launch an ec2 instance in ap-south-1a.. Add 1 gb volume and make it avialble.. Add 1 more gb size to this volume and make 2gb availble.
+
+Task 2 : launch an ec2 instance in ap-south-1b...   Get a copy of 2gb volume from task 1 and make it available for task 2 instance. 
+
+______________
+
+D: 04/12/2020
+
+DLM : Data Lifecycle Manager : 
+--> VOlume Level
+--> Instance Level
+
+Task: Launch an ec2 instance with 1 gb additional volume, and configure to take a backup copy at 06:00 AM IST Daily. Retention period: 2 Days.. 
+
+
+Images : 
+Scenario : 100 x Ec2 instance.. Install IIS, Install with AV, MS Office, CUstom WP, Putty, pdf.. 
+
+GoldenAMI : CUstomized AMI.. 
+
+Launch 1 EC2 instance --> Connect and configure with required settings --> Image
+
+Recommanded: Stop instance before creating an Image. (follow/skip)
+
+Using this GAMI --> We can copy this to ANother Region..
+We can share this with another AWS account user. Or We can even make it public. 
+
+
+CIS STandard: At ent level.. all our OS/Instances should comply with CIS benchmarks. 
+
+
+
+
+
+
+
+
 
 
 
