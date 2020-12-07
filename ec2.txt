@@ -244,17 +244,111 @@ We can share this with another AWS account user. Or We can even make it public.
 
 CIS STandard: At ent level.. all our OS/Instances should comply with CIS benchmarks. 
 
+______________________________________________________________________________________
+
+D: 07/12/2020
+
+Linux Instances : 
+--> Putty
+--> Install Openssh and use defualt windows cmd prompt
+--> Install Git for windows and use GIT terminal
+
+Step 1 : Choose an AMI : Amazon Linux 2  (Fedora)
+
+Step 2 : Free Tier : 750 Hrs/Month : t2.micro
+
+Per Month: 750 Hours Windows INstance with t2.micro
+Per Month: 750 Hours Linux INstance with t2.micro
+
+
+Step 3 : Configure additional options
+
+Step 4 : CHoose the Volume (Min : 8 Gb)
+
+Step 5 : Associate valid tags
+
+Step 6 : Configure Security Groups.
+
+Linux : Port 22 : SSH : Secure Shell
+
+Step 7: Create a Keypair and Launch instance.
+
+__________________
+GIT : https://git-scm.com/download/win
+
+Navigate to the location, where our keypair is located. Right click.. Open GIT BASH here.
+
+Verify the File by giving "ls" command.
+
+ssh -i keypair.pem ec2-user@publicIP
+__________________
+
+To use Command Prompt.. Install "Openssh tools".   (Settings --> Apps --> Additional apps --> Install Openssh client)
+
+ssh -i keypair.pem ec2-user@publicip
+
+__________________
+
+Putty.. 
+--> Putty won;t support .pem format. It supports .ppk file format. So, we need to convert .pem to .ppk.. We use "PuttyGen" for the convertion.
+
+
+https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
+putty.exe
+puttygen.exe
+
+
+___________________________________
+
+sudo su			--> Switch to root user. 
+
+always give "sudo" if youa re working as ec2-user.
+
+whoami			--> tells us as what user we are working now.
+hostname		--> Tells us the computer/instance name.
+ls			--> List the files
+ls -a			--> List everything including hidden
+cat filename		--> Displays the file content without opening it.
+more filename		--> Displays the file content without opening it.
+pwd			--> Print working directory
+
+rpm : redhat package manager : Cannot resolve dependencies automatically.
+
+yum : Yellodog update manager : 
+
+yum install packagename
+yum install httpd -y		--> Apache webserver
+service httpd status		--> TO know the apache status
+service httpd start / stop / restart
+
+chkconfig httpd on		--> Service adds to startup.. Starts after restats
+
+
+sudo su
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cd /var/www/html/		--> Create all the webpages
+
+
+editors: vi, nano, vim.. 
+
+VIM : 
+
+vim filename
+Press I		--> To goto Insert mode
+Press Esc	--> To comeout from INSERT mode
+:wq		--> Write and Quit
+:q!		--> Quit the editor without writing the changes. 
 
 
 
+Task : Launch Linux ec2 instance and connect to it using Putty and Openssh.
 
+Task 2 : Make your ec2 instance as apache webserver. and deliver custom webpage.
 
+Task 3 : Launch another ec2 instance, and Install "nginx" and deliver custom webpage.
 
-
-
-
-
-
-
-
+Task 4 : Instead of ec2-user, create a custom user and provide custom user login permissions. (If you have exp with linux)
 
