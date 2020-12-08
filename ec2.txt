@@ -352,3 +352,61 @@ Task 3 : Launch another ec2 instance, and Install "nginx" and deliver custom web
 
 Task 4 : Instead of ec2-user, create a custom user and provide custom user login permissions. (If you have exp with linux)
 
+_______________________________________________________________________________________
+
+D: 08/12/2020
+
+windows: diskmanagement : Verify
+
+df -Th		:	Verify available to use volumes
+
+lsblk 		: 	all the volumes associated to instance 
+
+/dev		: 	all devices location in Linux OS
+/dev/xvdb	: 	Newly added volume name
+mkdir		: 	Make directory (Create a folder)
+
+
+write a file system to newly added volume.
+mkfs -t xfs /dev/xvdb
+
+mkdir 1gbvolume
+mount /dev/xvdb 1gbvolume		--> this is a temp mount.. 
+
+By adding an entry in /etc/fstab file, we can make it as a perm mount. 
+Get the entry information from /etc/mtab file. 
+
+cat /etc/mtab.. and get the entry information.. 
+
+/dev/xvdb /home/ec2-user/1gbvolume xfs rw,relatime,attr2,inode64,noquota 0 0
+
+open /etc/fstab.. and add the above entry.
+
+lsblk : get the name
+mkdir volume
+mkfs -t xfs /dev/xvd*
+mount /dev/xvd* volume
+cat /etc/mtab
+vim /etc/fstab
+
+
+Linux: How to recover our ec2 instance, if we loss keypair..!!
+
+Instance --> Create a GoldenAMI --> Launch a new instance (associate a new keypair).
+
+
+Task : Launch a Linux INstance, Add 1gb volume to instance and make it avaibale. and add entry in fstab file for this 1gb volume.
+
+Task 2 : Add 1 more gb to the existing volume.. and make it available. 
+
+help: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
+
+___________________________________________________________
+
+> : pipe the inforamtion but overwrite the existing data.
+>> : Pipes the information and add entry to the existing data.
+
+Userdata and Metadata: 
+
+
+
