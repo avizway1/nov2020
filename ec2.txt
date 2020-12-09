@@ -408,5 +408,89 @@ ___________________________________________________________
 
 Userdata and Metadata: 
 
+________________________________________________________________________________________
+
+D: 09/12/2020
+
+metadata: 
+
+Windows: open browser : http://169.254.169.254/latest/meta-data/
+Linux : curl http://169.254.169.254/latest/meta-data/public-ipv4
+
+ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+events/
+hibernation/
+hostname
+identity-credentials/
+instance-action
+instance-id
+instance-life-cycle
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+
+
+Userdata: BSS : BootStrap Script: It exustes when we launch instance.. 
+
+use "cloud-init" to execute script after every reboot.
+
+#!/bin/bash
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+echo "<h1>THis is a BSS Webpage</h1>" >> /var/www/html/index.html
+
+Windows:
+
+<powershell>
+commands
+</powershell>
+
+
+<script>
+tzutil /s "India Standard Time"
+echo %date% %time% >> test.txt
+</script>
+<persist>true</persist>		--> Executes the command after every reboot
+
+
+_______________________________
+ELB : Elastic Load Balancer.
+
+Scaling : 
+--> Vertical Scaling
+--> horizontal Scaling
+
+3 Types of ELBs avaible in AWS.
+--> Classic ELB : http, https, tcp, udp.. all legacy protocols.. Previous Generation..
+--> Application ELB : http & https
+--> Network ELB : tcp, udp, tcp/tls.. 
+
+--> We won;t get a Pubic IP add, We'll get a DNS name for ELB.
+--> Internal ELB : Works with in AWS env only.
+--> Internet ELB : Access across the globe
+
+InService
+OutofService
+
+Task : Launch 2 ec2 instance in multiple AZs.. Pass the userdata to make instance as webserver.. Configure the Classic ELB with both the instances.
+
+Task 2 : Launch 3rd ec2 instance, make it as webserver and add this onstance to the Existing ELB.
+
+
+
 
 
