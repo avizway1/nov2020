@@ -490,6 +490,37 @@ Task : Launch 2 ec2 instance in multiple AZs.. Pass the userdata to make instanc
 
 Task 2 : Launch 3rd ec2 instance, make it as webserver and add this onstance to the Existing ELB.
 
+________________________________________________________________________________________
+
+D: 10/12/2020
+
+Application ELB
+
+#!/bin/bash
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+echo "<h1>THis is my 8080 WebServer</h1>" >> /var/www/html/index.html
+
+
+--> Can we change the target type of a TG after its created.
+	--> NO
+--> ELB uses nested roundrobin algorithm. 
+
+
+Network ELB : Supports TCP, UDP, TLS protocols.. 
+--> We have an Advantage, We can allocate an Elastic IP to our Network ELB.
+--> it works with FLowhash Algorithm. 
+
+
+How we can enable ELB Logging. 
+--> Access logs
+
+
+
+
+
+
 
 
 
