@@ -516,6 +516,36 @@ Network ELB : Supports TCP, UDP, TLS protocols..
 How we can enable ELB Logging. 
 --> Access logs
 
+_______________________________________________________________________________________
+
+D: 11/12/2020
+
+Auto Scaling Group : 
+
+--> Create a GAMI
+--> Create an ELB
+--> Create an ASG
+	--> Create a Launch Configuration
+	--> Create an ASG
+
+
+Task: COnfigure ASG as we discussed. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
