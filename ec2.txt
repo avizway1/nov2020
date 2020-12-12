@@ -531,6 +531,41 @@ Auto Scaling Group :
 
 Task: COnfigure ASG as we discussed. 
 
+______________________________________________________________________________________
+D: 12/12/2020
+
+IAM User :
+--> Programatic ACcess : AccessKeyID and SecretAccessKey : AWS CLI, API, SDK, IDE..
+
+aws --version		--> Installed CLI version
+aws configure		--> TO configure cli tools in local devices
+accesskeyid
+secretaccesskey
+region :
+output format : 
+
+aws servicename command
+aws s3 ls
+
+
+** We never use AccesskeyID and SecretACcessKey
+--> We always use Roles. 
+
+cloudberry explorer / s3 browser /cyberduck / winscp : S3 
+totalcloud.io : ec2
+
+
+https://awsclibuilder.com/home
+
+
+Task:  Create an index.html and upload it to s3 bucket... 
+While launching your ec2 instance, Pass the userdata to make it as webserver and copy the index.html from s3 bucket to /var/www/html/ path
+
+
+
+
+
+
 
 
 
