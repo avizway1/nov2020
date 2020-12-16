@@ -1,0 +1,66 @@
+Route53 : AWS DNS Service..
+DNS Port : 53
+DNS : DOmain Naming System / Service : 
+
+DNS : Phonebook : 
+
+FQDN (Fully Qualified domain Name) <--> IP and vice versa
+
+Domain Registrers : GOdaddy, bigrock, aws, google domain.. 
+
+ICANN : Maintins domain uniqueness : 
+
+IANA : Internet assigned numbers authority : Root Zone DB.. 
+
+TLD : Top Level Domain Name : .com .in .us
+SLD : Second level D N : .co.in
+
+
+We need a Domain Name : 
+--> Freenom.com
+--> Godaddy 
+
+Freenom : Domain registrer... avinashltk --> We need to get the requests to AWS.. Configure the DNS.. 
+
+--> Create a HostedZOne in ROute53.. Copy the Name Servers and Configure it in Freenom/godaddy.
+
+ns-900.awsdns-48.net
+ns-1686.awsdns-18.co.uk
+ns-1195.awsdns-21.org
+ns-146.awsdns-18.com
+
+HOSTEDZONE : 0.50$/Month.. 
+
+
+A : Address Record : IP <--> Name 
+AAAA : Address record For IPv6
+
+CNAME : Cananical Name : fb.com --> m.facebook.com
+TXT : text Record
+MX Record : Mail Exchange record.. 
+
+
+DOmain Name --> Ec2 instance / ELB / benastalk / S3 bucket / cloudfront / elb accelerator
+
+
+Simple RP
+Weighted RP
+Latency RP
+Failover RP
+Geolocation RP
+Multivalue answer RP
+
+Task : In ROute53, Can we configure multiple Primary/secondary resources in Failover routing policy.??
+
+Task : Can we combine multiple Routing policy, If yes.. What rp we can combine.?
+
+
+
+
+
+
+
+
+
+
+
