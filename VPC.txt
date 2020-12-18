@@ -1,0 +1,92 @@
+VPC : Virtual Private Cloud : 
+
+Public IP Address : Unique across the globe     : Cost us (ISP)
+Private IP Address : Unique within the network  : Free to use
+
+IPv4 : 32 bit : 2^32
+Ipv6 : 128 bit : 2^128 
+
+
+IPv4 :
+
+Class A : 1-126   : 10
+Class B : 128-191 : 172
+Class C : 192-223 : 192
+
+Class D : 224-239 Broadcosting and Multicasting
+Class E : 240-254 R&D
+
+127: Loopback / localhost
+
+0 and 255 ; We can't use
+0 --> Network ID
+255 --> Broadcost ID
+
+PRIVATE IP RANGES : Anyone can use this for internal communication
+CLASS A: 10.0.0.0 to 10.255.255.255
+CLASS B: 172.16.0.0 to 172.31.255.255
+CLASS C: 192.168.0.0 to 192.168.255.255
+
+Class A : N.H.H.H	: 
+Class B : N.N.H.H	: 
+Class C : N.N.N.H	: 
+
+192.168.0.(0-255)  : 192.168.0.0-255  : 256-2 : 254 Usable
+192.168.1.(0-255)  : 192.168.1.0-255  : 256-2 : 254 Usable
+
+
+/32	/31	/30	/29	/28	/27	/26	/25	/24	/16	/0
+
+2^0	2^1	2^2	2^3	2^4	2^5	2^6	2^7	2^8	2^16	2^32
+
+1	2	4	8	16	32	64	128	256	65536	4M
+
+
+AWS Supports from /28 - /16
+
+Generally in Any network 2 IPs are reserved. AWS Reservers 3 more = so total "5" 
+2 --> DNS Purpose
+1 --> Future use
+
+/26 : 64 - 5 = 61 Usable IPs
+/16 : 65536-5 = 65531 Usable IPs
+
+TShirt Size :..? 
+box = server
+
+
+NAT : Network Address tranlator
+
+
+Default VPC : 
+--> user friendly
+--> All subnets are public subnets.
+--> Org level We don;t use Default VPC.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
