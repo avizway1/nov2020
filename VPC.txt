@@ -64,6 +64,55 @@ Default VPC :
 --> Org level We don;t use Default VPC.
 
 
+_____________________________________________________________________________________
+
+D: 19/12/2020
+
+Step 1 : Create a VPC 
+	VPCName : production-VPC, CIDR : 192.168.0.0/16
+	Tenancy: Default
+
+Step 2 : Create Subnets
+Public SUbnet : ap-south-1a : 192.168.100.0/24
+Private Subnet : ap-south-1b : 192.168.200.0/24
+
+Step 3 : Create an InternetGateway and Attach to "Production-VPC".
+
+*One VPC can contain one IGW at a time.
+
+Step 4 : Navigate to RouteTables and create Routetables
+
+PublicRoute : Navigate to Routes and add a route,
+	0.0.0.0/0 --> InternetGateway, Subnet Association and Select "Public SUbnet"
+
+Private Route : Subnet Association and Select "Private SUbnet". **DOn't add any route with InternetGateway for this Routetable.
+
+Step 5 : (Optional) : TO get a PublicIP address automatically to Pubissubnets.
+Navigate to SUbnets, Choose the "Public SUbnet"--> Actions --> "Modify auto assign ip" --> "Enable automaticpublicip".
+
+
+JUMP Server / Bastian Host : THis is a dedicated ec2 instance, Runs in CustomVPC PublicSubnet. To connect to "Private SUbnet" Instances. 
+
+
+
+Task : Create a VPC with Public and Private SUbnets. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
