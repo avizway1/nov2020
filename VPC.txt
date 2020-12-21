@@ -98,6 +98,60 @@ JUMP Server / Bastian Host : THis is a dedicated ec2 instance, Runs in CustomVPC
 Task : Create a VPC with Public and Private SUbnets. 
 
 
+______________________________________________________________________________________
+
+D: 21/12/2020
+
+
+We need internet connection to download an application / Download OS patches / Access external endpoints over internet for "Private Subnet Instances". 
+
+NAT Gateway :  EIP COst us
+--> Designed to provide Internet to Private SUbnet Instances.
+--> NAT Gateway always runs in PublicSubnet.
+--> We need to add an entry to PrivateSUbnet's ROute table.
+
+
+NAT Instance : Not using at enterprise level..    
+--> Launch a NAT Insatnce in Public SUbnet
+--> Disable "Source/Destination check" on NAT Instance
+--> Open http and https port on NAT Instance SG.
+--> We need to add an entry to PrivateSUbnet's ROute table.
+
+
+___
+
+Logging on VPC : Flow Logs
+--> VPC Level
+--> Subnet Level
+--> Instance Level
+
+Destination: 
+--> S3 bucket
+--> Cloudwatch LogGroup
+
+
+
+
+Network ACLs: NACL : Works as firewall at Subnet Level.
+--> We can allow traffic and DENY also.
+--> We must open Ephemeral Ports (Mandatory based on Resources we run: 1024-65535)
+--> Unlike SG, We need to takes care about the Inbound rules and outbound rules.
+
+--> Lowest rule Number will have highest priority.
+
+Default NACL WIll allow all the traffic. 
+New NACL won;t allow any traffic, We manually need to open.
+
+* One SUbnet Can be member of One NACL at a time.
+
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
+
+
+How to Impliment VPN.? No Free Tier
+Video : 
+
+
+Task : Configure VPC with NAT Instance and COnfigure NACL to block traffic from your own network.
 
 
 
