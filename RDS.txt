@@ -1,0 +1,53 @@
+RDS : Realtional Database Service : 
+
+--> Amazon Aurora
+--> MySql
+--> PostgreSQL
+--> MariaDB
+--> Microsoft SQL
+--> Oracle
+
+
+Free tier : db.t2.micro, Everymonth 750 Hours..
+
+We don't get any public IP address for db instances. We'll get Endpoints.
+
+35 Days is Max backup retention period.
+
+--> Amazon Aurora : pgamin/mysql workbench
+--> MySql	: Mysql Workbench
+--> PostgreSQL	: PgAdmin
+--> MariaDB	: Workbench
+--> Microsoft SQL : SSMS (SQL Server Management Studio)
+--> Oracle	: Toad
+
+
+
+Task : In CUstomVPC.. Launch an ec2 instance, make it as a Wordpress webserver.. : publicsubnet
+Launch an MYSQL RDS instance.. and use this for ec2 made wordpress website. : Private Subnet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
