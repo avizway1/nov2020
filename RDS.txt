@@ -27,6 +27,73 @@ Task : In CUstomVPC.. Launch an ec2 instance, make it as a Wordpress webserver..
 Launch an MYSQL RDS instance.. and use this for ec2 made wordpress website. : Private Subnet
 
 
+_________________________________________________________________________________________
+
+D: 25/12/2020
+
+Multi-AZ : 
+--> THis feature is designed for DR (DIsaster Recovery) purpose.
+--> Another copy of DB runs in another AZ.
+--> We will get charged double if we enable Multi-AZ. 
+--> Multi-AZ doesn't provide any Scalability. 
+
+Read Replica : 
+--> ANother copy of our database, We can perform only Read Operations.
+--> Whatever modifications happens in Primary db, it replicates immediatlely to Replica copy.
+--> We can run Replica in Another Region, if required.
+--> THis is purely for Scaling purpose.
+--> If primary copy goes down, Write operations will effect on our application.
+--> We can choose diff configuration for read replica if required.
+
+--> If we don;t want to continue the replication, We can Promote the read replica. it works same as individual rds instance.
+
+__________
+
+RDS Backup : Snapshot..
+If we enable automatic backup option on RDS insatnce, whenever we perform any major modifications it'll create a backup copy automatically.
+--> Automatic Backups : Also refered as Systems Backups : AWS Created automatically.
+	--> We cannot delete it.
+	--> Change backup retention period.
+	--> Max retion period is 35 Days. Default 7 Days.
+	--> If we delete RDS Instance, THese SS deletes automatically.
+
+--> Manual Backups :
+	--> We need to create manually.
+	--> We can delete these when required.
+--> We can share to another users / Make it public / copy to another region.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
