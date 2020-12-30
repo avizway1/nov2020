@@ -1,0 +1,14 @@
+CloudTrail : It stores all the logs.. Enabled by default : 90 Days.. 
+
+Store the trail in S3 bucket.. Unlimited days.. Configure LifeCyclerule on S3 to delete after specific yrs.. 
+
+Management events : Capture management operations performed on your AWS resources.
+
+Data events :Log the resource operations performed on or within a resource. (S3 /Lambda)
+
+Insights events
+Identify unusual activity, errors, or user behavior in your account.
+
+** Enterprise : A dedicated account to store all the logs :Centralised Logging Account.. 
+
+--> Amazon Athena : To analyse the Cloudtrail logs.. 

@@ -62,6 +62,49 @@ If we enable automatic backup option on RDS insatnce, whenever we perform any ma
 	--> We can delete these when required.
 --> We can share to another users / Make it public / copy to another region.
 
+______________________________________________________________________________________
+
+D: 30/12/2020
+
+DynamoDB : NoSQL db.. JSON format.. Serverless 
+RDS = DB Instance = Schema / db = Table
+DYnamodb = Table
+
+** Single digit milli second latency at any scale of data.. 
+
+Caching for DynamoDB : DAX (DYnamoDB Accelerator)
+
+
+______
+
+Amazon RedShift : AWS Datawarehousing solution... 
+Port : 5439
+
+
+OLTP : Online transaction Processing : RDS
+OLAP : Online Analytical Processing : Redshift
+
+______
+
+Elasticache: In-Memory caching service for RDS.. 
+--> MemcacheD
+--> Redis  (Authentication : Redis AUTH).. Encryption possible (InTransit and AtRest)
+
+
+DMS : Database Migration Service : 
+
+-> Homogenious Migration : mysql (on-prem) --> DMS --> Mysql (RDS)
+-> heteroGenious migration : mongodb --> DMS --> SCT (Schema Convertion tool) --> mysql
+
+DB Migration : https://www.youtube.com/watch?v=iRhJDGp-ew8
+
+________________________________________
+
+
+
+
+
+
 
 
 
