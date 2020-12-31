@@ -12,3 +12,68 @@ Identify unusual activity, errors, or user behavior in your account.
 ** Enterprise : A dedicated account to store all the logs :Centralised Logging Account.. 
 
 --> Amazon Athena : To analyse the Cloudtrail logs.. 
+
+
+
+________________________________________________________________________________________
+
+D: 31/12/2020
+
+Config : TO verify the resource complinaces we use aws config.
+
+IAM User : Permissions --> Modified --> when --> Who --> Timeine
+S3 Bucket made public 
+Public Snapshot : ec2 / rds
+
+AWS Config gets the logs/information from Cloudtrail only.
+
+AWS Config rules : NO FREE TIER ELIGIBILITY
+
+______
+
+Amazon CloudFront : 
+--> https://xxxxxx.cloudfront.net/objectname
+Default Object
+--> http to https
+--> Only https : http requests will not deliver
+
+
+How to clear cache from Edge locations.? How to push latest changes to Edge location.?
+Ans: Invalidation.. 
+
+
+
+ACM : Amazon Certificate Manager : 
+--> SSL / TLS Certificates
+
+--> We can get a SSL cert for free.
+
+How to redirecct http to https at application level..!!! 
+
+
+
+Task : Create a CloudFront Distribution using ELB.
+
+Task 2 : Use the ACM certificate with Cloudfront distribution. (If you have domain name)
+
+Task 3 : Configure an ec2 instance, add rewrite rule to redirect http to https.. Map you domain name via ELB DNS name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
