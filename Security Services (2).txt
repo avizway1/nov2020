@@ -58,6 +58,40 @@ Task 2 : Use the ACM certificate with Cloudfront distribution. (If you have doma
 
 Task 3 : Configure an ec2 instance, add rewrite rule to redirect http to https.. Map you domain name via ELB DNS name.
 
+_______________________________________________________________________________________
+
+D: 02/01/2021
+
+Amazon Inspector : 
+--> Security best oractices / COmmon vulnerability / CIS benchmarks/Standards.. 
+
+For every 14 days we run Amazon Inspector in Prod environment.
+
+Amazon Shield : Protect resources from DDoS attacks. 
+	shield advanced cost us 3000$/Month.. 
+
+WAF : Web Application Firewall : 
+--> ELB / CLoudfront
+
+Secrets Manager : To store username and passwords for RDS service. 
+
+Directory Service : 
+--> Impliment Active Directory (DS / AD Connector)
+
+https://www.youtube.com/watch?v=RDlBoAHVmZs
+https://www.youtube.com/watch?v=Ca259gg6SoM
+
+
+_____________________
+
+
+
+
+
+
+
+
+
 
 
 
