@@ -1,0 +1,156 @@
+Lambda : 
+--> Serverless Architecture
+--> Lambda supports ...  .Netcore, Go, Ruby, Python, Java and Node.js
+
+Canary Function : Open the website and look for the given string. 
+Permissions for Lambda function comes with "ExecutionRole".
+
+EventBridge : Service to trigger any function periodically / specific intervals.
+rate(5 minutes) / Cron(* * * * * *)
+Ouput stores in "Cloudwatch LogGroup"
+
+Billing : How many sec our code is running, How much memory is used.. 
+
+Can we run lambda function in a VPC.? How to..??
+Yes.. Execution role must have permissions on VPC. (AWSLambdaVPCAccessExecutionRole) must be added to Lambda ExecutinRole. 
+_____________________________________________________________________________________
+EBS VOlume Status: Need to execute for Every 24 hrs at 09:00 AM 
+______________________________________________________________________________________
+
+import boto3
+import json
+
+client=boto3.client('ec2')
+sns = boto3.client('sns')
+sns_topic = "arn:aws:sns:ap-south-1:51808482393:S3Notifications"
+sns_subject =  "Un-attached/not in use EBS Volumes"
+Non_Compliant=[]
+tags = {}
+
+def lambda_handler(event, context):
+    result = client.describe_volumes( Filters=[{'Name': 'status', 'Values': ['available']}])
+    msg = "Hi Team," + "\n" + "Below is the list of available status Volumes details" + "\n"
+    for volume in result['Volumes']:
+        for tag in volume['Tags']:
+            tags[tag['Key']] = tag['Value']
+            #print(tags)
+        if 'avlexception' in tags:
+            print('Compliant volume',volume['VolumeId'])
+        else:
+            print('Non Compliant Volume/Not attached'+ volume['VolumeId'])
+            noncompliant='Non Compliant Volume id %s' %volume['VolumeId']
+            Non_Compliant.append(noncompliant)
+            msg = msg + "\n" + noncompliant
+            sns.publish(TopicArn='arn:aws:sns:ap-south-1:518084852393:S3Notifications', Message = "\n" + msg, Subject='EBS Volume in available status')
+    # return Non_Compliant
+
+________________________________________________________________________________________
+EBS Volume UnEncrypted volume notifications
+________________________________________________________________________________________
+
+import boto3
+import json
+import sys
+
+client=boto3.client('ec2')
+sns = boto3.client('sns')
+sns_topic = "arn:aws:sns:ap-south-1:518084852393:S3Notifications"
+sns_subject =  "Non-Encrypted EBS Volumes"
+Non_Compliant=[]
+
+
+def lambda_handler(event, context):
+    result = client.describe_volumes( Filters=[{'Name': 'encrypted', 'Values': ['false']},{'Name': 'attachment.device', 'Values': ['/dev/sdf','/dev/sdg','/dev/x*']}])
+    msg = "Hi Team," + "\n" + "Below is the list of Non-Encrypted Volumes details" "\n" "Service Team please create and assigne ticket to Cloud Team" + "\n"
+    #print(EBS_All)
+    #object_contents = response['Volumes'][0]
+    #EBS_Vol_All=EBS_All['Volumes']
+    #print(EBS_Vol_All)
+    for volume in result['Volumes']:
+        #if 'Tags' in volume:
+        tags = {}
+        for tag in volume['Tags']:
+            tags[tag['Key']] = tag['Value']
+            #print(tags)
+        if 'exception' in tags:
+           # tags["Key"] != 'encryptexception':
+            print(volume['VolumeId'])
+        
+        else:
+            print("---" + volume['VolumeId'])
+            noncompliant='Non Compliant Volume id %s.' %volume['VolumeId']
+            Non_Compliant.append(noncompliant)
+            msg = msg + "\n" + noncompliant
+            sns.publish(TopicArn='arn:aws:sns:ap-south-1:518084852393:S3Notifications', Message = "\n" + msg, Subject='EBS Non Encrypted Volume')
+    # return Non_Compliant
+
+_________________________________________________________________________________________
+
+Start and Start ec2 instances periodically.
+
+https://www.youtube.com/watch?v=8gfSS-ZIulQ
+
+________________________________________________________________________________________
+
+Task : Deploy shared 3 Lambda functions.
+
+
+Cloudformation : IaaC : AWS Version of Terraform : 
+--> JSON / YAML
+
+
+AWS Console recorder: chrome-extension://ganlhgooidfbijjidcpkeaohjnkeicba/main.html
+
+Task : Generate Cloudformation script for Launching an ec2 instance using Console recorder for aws.
+
+https://plugins.jetbrains.com/plugin/10653-typeformation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
