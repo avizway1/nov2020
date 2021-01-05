@@ -105,6 +105,37 @@ Task : Generate Cloudformation script for Launching an ec2 instance using Consol
 
 https://plugins.jetbrains.com/plugin/10653-typeformation
 
+_______________________________________________________________________________________
+
+D: 05/01/2021
+
+
+Code Pipeline : For CICD 
+COdeCommait : GIT/TFS.. 
+CodeBuild : Jenkins
+COdeDeploy : ec2/benstalk
+
+Cloud9 : IDE within Browser..
+
+
+COntainers in AWS: 
+--> ECR : Elastic COntainr Repository
+--> ECS : Elastic Container Service
+--> EKS : Elastic Kubernetis Service
+
+
+https://containersfromthecouch.com/
+https://ecsworkshop.com/
+https://eksworkshop.com/
+
+
+
+
+
+
+
+
+
 
 
 
